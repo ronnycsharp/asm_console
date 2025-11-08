@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembler Live Console - Apple Silicon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖥️ Assembler Live Console</h1>
+            <p class="subtitle">Apple Silicon (ARM64) Assembler im Browser</p>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <div class="section-header">
+                    <h2>Assembly Code Editor</h2>
+                    <div class="button-group">
+                        <button id="runBtn" class="btn btn-primary">▶ Ausführen</button>
+                        <button id="clearBtn" class="btn btn-secondary">🗑️ Löschen</button>
+                        <button id="exampleBtn" class="btn btn-secondary">📋 Beispiel laden</button>
+                    </div>
+                </div>
+                <textarea id="codeEditor" class="code-editor" spellcheck="false" placeholder="// Schreiben Sie hier Ihren ARM64 Assembly Code...
+// Beispiel:
+MOV X0, #42
+MOV X1, #8
+ADD X2, X0, X1
+"></textarea>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>Ausgabe & Register</h2>
+                    <button id="clearOutputBtn" class="btn btn-small">Ausgabe löschen</button>
+                </div>
+                
+                <div class="registers-panel">
+                    <h3>Register Status</h3>
+                    <div id="registersDisplay" class="registers-grid"></div>
+                </div>
+
+                <div class="output-panel">
+                    <h3>Konsolen Ausgabe</h3>
+                    <pre id="output" class="output-display"></pre>
+                </div>
+
+                <div class="flags-panel">
+                    <h3>Flags & Status</h3>
+                    <div id="flagsDisplay" class="flags-display"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Unterstützte ARM64 Instruktionen</h3>
+            <div class="instruction-grid">
+                <div class="instruction-category">
+                    <h4>Datenverarbeitung</h4>
+                    <ul>
+                        <li><code>MOV</code> - Register bewegen</li>
+                        <li><code>ADD</code> - Addition</li>
+                        <li><code>SUB</code> - Subtraktion</li>
+                        <li><code>MUL</code> - Multiplikation</li>
+                    </ul>
+                </div>
+                <div class="instruction-category">
+                    <h4>Logische Operationen</h4>
+                    <ul>
+                        <li><code>AND</code> - Bitweises UND</li>
+                        <li><code>ORR</code> - Bitweises ODER</li>
+                        <li><code>EOR</code> - Bitweises XOR</li>
+                        <li><code>LSL</code> - Links schieben</li>
+                    </ul>
+                </div>
+                <div class="instruction-category">
+                    <h4>Vergleich & Verzweigung</h4>
+                    <ul>
+                        <li><code>CMP</code> - Vergleichen</li>
+                        <li><code>B</code> - Unbedingter Sprung</li>
+                        <li><code>BEQ</code> - Sprung wenn gleich</li>
+                        <li><code>BNE</code> - Sprung wenn ungleich</li>
+                    </ul>
+                </div>
+                <div class="instruction-category">
+                    <h4>Speicher & System</h4>
+                    <ul>
+                        <li><code>LDR</code> - Register laden</li>
+                        <li><code>STR</code> - Register speichern</li>
+                        <li><code>NOP</code> - Keine Operation</li>
+                        <li><code>RET</code> - Rücksprung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Assembler Live Console | Apple Silicon ARM64 Simulator</p>
+        </footer>
+    </div>
+
+    <script src="assembler.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
