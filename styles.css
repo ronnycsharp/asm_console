@@ -53,6 +53,46 @@ header h1 {
     opacity: 0.95;
 }
 
+.architecture-selector {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.architecture-selector label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.arch-select {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.arch-select:hover {
+    border-color: var(--primary-color);
+}
+
+.arch-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
 .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

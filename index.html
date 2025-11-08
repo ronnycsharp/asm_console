@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assembler Live Console - Apple Silicon</title>
+    <title>Assembler Live Console</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🖥️ Assembler Live Console</h1>
-            <p class="subtitle">Apple Silicon (ARM64) Assembler im Browser</p>
+            <p class="subtitle" id="subtitleText">Multi-Architecture Assembler im Browser</p>
         </header>
+
+        <div class="architecture-selector">
+            <label for="archSelect">Architektur:</label>
+            <select id="archSelect" class="arch-select">
+                <option value="arm64">ARM64 (Apple Silicon)</option>
+                <option value="x86">x86-64 (Intel/AMD)</option>
+            </select>
+        </div>
 
         <div class="main-content">
             <div class="editor-section">
@@ -97,10 +105,11 @@ ADD X2, X0, X1
         </div>
 
         <footer>
-            <p>© 2024 Assembler Live Console | Apple Silicon ARM64 Simulator</p>
+            <p>© 2024 Assembler Live Console | Multi-Architecture Simulator</p>
         </footer>
     </div>
 
+    <script src="x86_assembler.js"></script>
     <script src="assembler.js"></script>
     <script src="app.js"></script>
 </body>
